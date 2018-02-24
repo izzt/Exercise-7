@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Exercise 7-6</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<style>
+        #fadeout{
+            position: relative
+        }
+    
+    </style>
+</head>
+
+<body>
+    
+    <header><h1>Exercise7-6</h1></header>
+    
+    <div>
+    <img src="bouquet-3175315_640.jpg" alt="2018" width= "150px" height="150px"id="fadeout"><br>
+    <button class="btn1">Add</button>
+        
+    </div>
+    
+    <script>
+    
+        $(".btn1").click(function(){
+        $("#fadeout").animate({
+            opacity: '0.5',
+            left: '250px'
+        }, 2000, 'swing');
+    });
+    
+    
+    </script>
+	
+
+</body>
+</html>

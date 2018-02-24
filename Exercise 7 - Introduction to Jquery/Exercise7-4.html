@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Exercise 7-4</title>
+	<style>
+    
+    body {
+    background-color: #efefef;
+    color: #222;
+    font-family: helveticaneue, "Helvetica Neue", helvetica, sans-serif;
+    padding: 2em;
+}
+
+h1 {
+	border-bottom: 1px solid #8999af;
+	margin-bottom: 0.5em;
+	padding-bottom: 0.5em;
+	color: #3A497B;
+}
+
+#page {
+	max-width: 43.75em;
+	margin: 1em auto 1em;
+}
+
+input[type=text] {
+    padding: 0.5em;
+    border: 1px solid #999;
+    width: 20em;
+    display: block;
+    font-family: helveticaneue, "Helvetica Neue", helvetica, sans-serif;
+    font-size: 100%;
+}
+
+label {
+    display: block;
+    font-size: 85%;
+    margin-bottom: 0.2em;
+    color: #333;
+}
+
+.group {
+    margin: 0 0 1em;
+}
+
+.error{
+    background: :#ecc;
+    border: 1px solid #933;
+    padding: : 0.5em;
+}
+
+.error label{
+    font-weight: bold;
+    color: #933;
+}
+
+.msg{
+    background: #cec;
+    border: 1px solid #393;
+    padding: 0.5em;
+}
+
+.msg p{
+    padding-left: 0.2em;
+    margin-bottom: 0.2em;
+    font-size: 85%;
+    font-weight: bold;
+}
+    
+    </style>
+</head>
+<body>
+
+    <div id="page"></div>
+
+<h1>Exercise 7-4 - Form Feedback Challenge</h1>
+
+<form id="my-form">
+	<div class="group">
+	<label>Your name (required):</label>
+	<input type="text" name="name" value="" placeholder="Your name">
+	</div>
+	
+	<div class="group">
+	<label>Your favorite color (required):</label>
+	<input type="text" name="color" value="green" placeholder="Personal choice, really!">
+	</div>
+	
+	<div class="group">
+	<label>Your phone number:</label>
+	<input type="text" name="phone" value="000-000-0000" placeholder="(xxx) xxx-xxxx">
+	</div>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+<script>
+    $(function(){
+'use strict';
+    
+    var $form = $('#my-form');
+    
+    $form.find('.group:nth-child(1)')
+        .addClass ('error');
+	
+    $form.find('.group:nth-child(3)')
+        .addClass ('msg')
+    .append('<p>Good Choice!</p>');
+});
+    
+    </script>
+</body>
+</html>
